@@ -1,0 +1,18 @@
+{% extends 'main/header.html' %}
+{% block content %}
+<div class="row media content-section mobiledevice">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="d-flex">
+            <div>
+                <h1 class="title-style">{{ object.nombre_empleado}}</h1>
+                <h2 class="subtitle-style">{{ object.tipo_trabajo}}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9 col-md-12 col-sm-12" id="content">
+        <div class="article-style">
+            {{ object.nombre_empleado|safe }}
+        </div>
+    </div>
+</div>
+{% endblock content %}
