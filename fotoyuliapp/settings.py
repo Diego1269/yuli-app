@@ -97,8 +97,13 @@ WSGI_APPLICATION = 'fotoyuliapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'fotoyuli.db',
+        #'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'eoWvhTSkU6XELeCWGtIP',
+        'HOST': 'containers-us-west-49.railway.app',
+        'PORT': '7831',
     }
 }
 
