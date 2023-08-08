@@ -3,15 +3,80 @@
 <div class="row media content-section mobiledevice">
     <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="d-flex">
-            <div>
-                <h1 class="title-style">{{ object.nombre_empleado}}</h1>
-                <h2 class="subtitle-style">{{ object.tipo_trabajo}}</h2>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-9 col-md-12 col-sm-12" id="content">
-        <div class="article-style">
-            {{ object.nombre_empleado|safe }}
+            
+            {% if type == "trabajador" %}
+                <div>
+                    <h1 class="title-style">{{ object.nombre_empleado }}</h1>
+                    <h2 class="subtitle-style">{{ object.tipo_trabajo }}</h2>
+                </div>
+                <div class="ml-auto">
+                    <a class="btn btncolor btn-sm mt-1 mb-1" href="{% url 'actualizar_trabajador' object.slug %}">Actualizar</a>
+                    <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'eliminar_trabajador' object.slug %}">Eliminar</a>
+                </div>
+            {% elif type == "salon" %}
+                <div>
+                    <h1 class="title-style">{{ object.nombre_salon }}</h1>
+                    <h2 class="subtitle-style">{{ object.ubicacion_salon }}</h2>
+                </div>
+                <div class="ml-auto">
+                    <a class="btn btncolor btn-sm mt-1 mb-1" href="{% url 'actualizar_salon' object.slug %}">Actualizar</a>
+                    <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'eliminar_salon' object.slug %}">Eliminar</a>
+                </div>
+            {% elif type == "paquete" %}
+                <div>
+                    <h1 class="title-style">{{ object.nombre_paquete }}</h1>
+                    <h2 class="subtitle-style">{{ object }}</h2>
+                </div>
+                <div class="ml-auto">
+                    <a class="btn btncolor btn-sm mt-1 mb-1" href="{% url 'actualizar_paquete' object.slug %}">Actualizar</a>
+                    <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'eliminar_paquete' object.slug %}">Eliminar</a>
+                </div>
+            {% elif type == "contrato" %}
+                <div>
+                    <h1 class="title-style">{{ object.fecha_contrato }}</h1>
+                    <h2 class="subtitle-style">{{ object }}</h2>
+                </div>
+                <div class="ml-auto">
+                    <a class="btn btncolor btn-sm mt-1 mb-1" href="{% url 'actualizar_contrato' object.slug %}">Actualizar</a>
+                    <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'eliminar_contrato' object.slug %}">Eliminar</a>
+                </div>
+            {% elif type == "venta" %}
+                <div>
+                    <h1 class="title-style">{{ object.folio_venta }}</h1>
+                    <h2 class="subtitle-style">{{ object }}</h2>
+                </div>
+                <div class="ml-auto">
+                    <a class="btn btncolor btn-sm mt-1 mb-1" href="{% url 'actualizar_venta' object.slug %}">Actualizar</a>
+                    <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'eliminar_venta' object.slug %}">Eliminar</a>
+                </div>
+            {% elif type == "templo" %}
+                <div>
+                    <h1 class="title-style">{{ object.nombre_templo }}</h1>
+                    <h2 class="subtitle-style">{{ object.ubicacion_templo }}</h2>
+                </div>
+                <div class="ml-auto">
+                    <a class="btn btncolor btn-sm mt-1 mb-1" href="{% url 'actualizar_templo' object.slug %}">Actualizar</a>
+                    <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'eliminar_templo' object.slug %}">Eliminar</a>
+                </div>
+            {% elif type == "ubicacion" %}
+                <div>
+                    <h1 class="title-style">{{ object.nombre_ubicacion }}</h1>
+                    <h2 class="subtitle-style">{{ object.tipo_ubicacion }}</h2>
+                </div>
+                <div class="ml-auto">
+                    <a class="btn btncolor btn-sm mt-1 mb-1" href="{% url 'actualizar_ubicacion' object.slug %}">Actualizar</a>
+                    <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'eliminar_ubicacion' object.slug %}">Eliminar</a>
+                </div>
+            {% elif type == "asignacion" %}
+                <div>
+                    <h1 class="title-style">{{ object.id_asignacion }}</h1>
+                    <h2 class="subtitle-style">{{ object }}</h2>
+                </div>
+                <div class="ml-auto">
+                    <a class="btn btncolor btn-sm mt-1 mb-1" href="{% url 'actualizar_asignacion' object.slug %}">Actualizar</a>
+                    <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'eliminar_asignacion' object.slug %}">Eliminar</a>
+                </div>
+            {% endif %}
         </div>
     </div>
 </div>

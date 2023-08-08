@@ -1,0 +1,20 @@
+{% extends "main/header.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                {% if type == "actualizar" %}
+                    <legend class="border-bottom mb-4">Actualizar {{ object }}</legend>
+                {% else %}
+                    <legend class="border-bottom mb-4">Nuevo {{ object }}</legend>
+                {% endif %}
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btncolor" type="submit">Agregar</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

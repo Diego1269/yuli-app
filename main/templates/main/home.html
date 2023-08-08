@@ -1,24 +1,159 @@
 {% extends 'main/header.html' %}
+{% load static %}
 {% block content %}
     <div class="row display.flex justify-content-start">
-        {% for object in objects %}
+        <!-- Trabajadores-->
         <div class="col-lg-4 col-md-6 col-sm-12 mobiledevice">
             <article class="media content-section customhover" style="height: 95%;">
                 <div class="media-body">
-                    <a href="/{{object.slug}}">
-                        <img class="img-fluid" src="/" alt="el pepe">
+                    <a href="{% url 'trabajadores' %}">
+                        <img class="img-fluid" src="{% static 'img/F.jpg' %}">
                     </a>
+                    <hr>
                     <div>
-                        <a class="article-title line-clamp-2 title-style" style="font-size: 22px" href="/{{object.slug}}">
-                            {{ object.nombre_empleado }}
+                        <a class="article-title line-clamp-2 title-style" style="font-size: 22px" href="{% url 'trabajadores' %}">
+                            Trabajadores
                         </a>
                     </div>
-                    <a href="/{{object.slug}}" style="text-decoration: none;">
-                        <p class="article-content line-clamp-5 subtitle-style">{{ object.tipo_trabajo}}</p>
+                    <a href="{% url 'trabajadores' %}" style="text-decoration: none;">
+                        <p class="article-content line-clamp-5 subtitle-style">Todos los trabajadores del estudio</p>
                     </a>
                 </div>
             </article>
         </div>
-        {% endfor %}
+        <!-- Contratos-->
+        <div class="col-lg-4 col-md-6 col-sm-12 mobiledevice">
+            <article class="media content-section customhover" style="height: 95%;">
+                <div class="media-body">
+                    <a href="{% url 'contratos' %}">
+                        <img class="img-fluid" src="{% static 'img/G.jpg' %}">
+                    </a>
+                    <hr>
+                    <div>
+                        <a class="article-title line-clamp-2 title-style" style="font-size: 22px" href="{% url 'contratos' %}">
+                            Contratos
+                        </a>
+                    </div>
+                    <a href="{% url 'contratos' %}" style="text-decoration: none;">
+                        <p class="article-content line-clamp-5 subtitle-style">Todos los contratos vigentes</p>
+                    </a>
+                </div>
+            </article>
+        </div>
+        <!-- Ventas-->
+        <div class="col-lg-4 col-md-6 col-sm-12 mobiledevice">
+            <article class="media content-section customhover" style="height: 95%;">
+                <div class="media-body">
+                    <a href="{% url 'ventas' %}">
+                        <img class="img-fluid" src="{% static 'img/E.jpg' %}">
+                    </a>
+                    <hr>
+                    <div>
+                        <a class="article-title line-clamp-2 title-style" style="font-size: 22px" href="{% url 'ventas' %}">
+                            Ventas
+                        </a>
+                    </div>
+                    <a href="{% url 'ventas' %}" style="text-decoration: none;">
+                        <p class="article-content line-clamp-5 subtitle-style">Todas las ventas hechas</p>
+                    </a>
+                </div>
+            </article>
+        </div>
+        <!-- Ubicaciones-->
+        <div class="col-lg-4 col-md-6 col-sm-12 mobiledevice">
+            
+            <article class="media content-section customhover" style="height: 95%;">
+                <div class="media-body">
+                    <a href="{% url 'ubicaciones' %}">
+                        <img class="img-fluid" src="{% static 'img/A.jpg' %}">
+                    </a>
+                    <hr>
+                    <div>
+                        <a class="article-title line-clamp-2 title-style" style="font-size: 22px" href="{% url 'ubicaciones' %}">
+                            Ubicaciones
+                        </a>
+                    </div>
+                    <a href="{% url 'ubicaciones' %}" style="text-decoration: none;">
+                        <p class="article-content line-clamp-5 subtitle-style">Todas las Ubicaciones de Acámbaro</p>
+                    </a>
+                </div>
+            </article>
+        </div>
+        <!-- Templos-->
+        <div class="col-lg-4 col-md-6 col-sm-12 mobiledevice">
+            <article class="media content-section customhover" style="height: 95%;">
+                <div class="media-body">
+                    <a href="{% url 'templos' %}">
+                        <img class="img-fluid" src="{% static 'img/B.jpg' %}">
+                    </a>
+                    <hr>
+                    <div>
+                        <a class="article-title line-clamp-2 title-style" style="font-size: 22px" href="{% url 'templos' %}">
+                            Templos
+                        </a>
+                    </div>
+                    <a href="{% url 'templos' %}" style="text-decoration: none;">
+                        <p class="article-content line-clamp-5 subtitle-style">Todos los templos registrados de Acámbaro</p>
+                    </a>
+                </div>
+            </article>
+        </div>
+        <!-- Salones-->
+        <div class="col-lg-4 col-md-6 col-sm-12 mobiledevice">
+            <article class="media content-section customhover" style="height: 95%;">
+                <div class="media-body">
+                    <a href="{% url 'salones' %}">
+                        <img class="img-fluid" src="{% static 'img/C.jpg' %}">
+                    </a>
+                    <hr>
+                    <div>
+                        <a class="article-title line-clamp-2 title-style" style="font-size: 22px" href="{% url 'salones' %}">
+                            Salones
+                        </a>
+                    </div>
+                    <a href="{% url 'salones' %}" style="text-decoration: none;">
+                        <p class="article-content line-clamp-5 subtitle-style">Todos los salones disponibles de Acámbaro</p>
+                    </a>
+                </div>
+            </article>
+        </div>
+        <!-- Paquetes-->
+        <div class="col-lg-4 col-md-6 col-sm-12 mobiledevice">
+            <article class="media content-section customhover" style="height: 95%;">
+                <div class="media-body">
+                    <a href="{% url 'paquetes' %}">
+                        <img class="img-fluid" src="{% static 'img/D.jpg' %}">
+                    </a>
+                    <hr>
+                    <div>
+                        <a class="article-title line-clamp-2 title-style" style="font-size: 22px" href="{% url 'paquetes' %}">
+                            Paquetes
+                        </a>
+                    </div>
+                    <a href="{% url 'paquetes' %}" style="text-decoration: none;">
+                        <p class="article-content line-clamp-5 subtitle-style">Paquetes disponibles</p>
+                    </a>
+                </div>
+            </article>
+        </div>
+        <!-- Asignar-->
+        <div class="col-lg-4 col-md-6 col-sm-12 mobiledevice">
+            <article class="media content-section customhover" style="height: 95%;">
+                <div class="media-body">
+                    <a href="{% url 'asignaciones' %}">
+                        <img class="img-fluid" src="{% static 'img/H.jpg' %}">
+                    </a>
+                    <hr>
+                    <div>
+                        <a class="article-title line-clamp-2 title-style" style="font-size: 22px" href="{% url 'asignaciones' %}">
+                            Asignaciones
+                        </a>
+                    </div>
+                    <a href="{% url 'asignaciones' %}" style="text-decoration: none;">
+                        <p class="article-content line-clamp-5 subtitle-style">Asigna trabajadores a contratos</p>
+                    </a>
+                </div>
+            </article>
+        </div>   
     </div>
 {% endblock content %}

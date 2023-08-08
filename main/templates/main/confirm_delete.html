@@ -1,0 +1,32 @@
+{% extends "main/header.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Eliminar {{ type }}</legend>
+                <h2>Esta seguro que quiere eliminar {{ type }} "{{ object }}"?</h2>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-danger" type="submit">Confirmar</button>
+                {% if type == "trabajador" %}
+                    <a class="btn btn-outline-secondary" href="/trabajadores/{{ object.slug }}">Cancelar</a>
+                {% elif type == "salon" %}
+                    <a class="btn btn-outline-secondary" href="/salones/{{ object.slug }}">Cancelar</a>
+                {% elif type == "templo" %}
+                    <a class="btn btn-outline-secondary" href="/templos/{{ object.slug }}">Cancelar</a>
+                {% elif type == "ubicacion" %}
+                    <a class="btn btn-outline-secondary" href="/ubicaciones/{{ object.slug }}">Cancelar</a>
+                {% elif type == "contrato" %}
+                    <a class="btn btn-outline-secondary" href="/contratos/{{ object.slug }}">Cancelar</a>
+                {% elif type == "asignacion" %}
+                    <a class="btn btn-outline-secondary" href="/asignaciones/{{ object.slug }}">Cancelar</a>
+                {% elif type == "paquete" %}
+                    <a class="btn btn-outline-secondary" href="/paquetes/{{ object.slug }}">Cancelar</a>
+                {% elif type == "venta" %}
+                    <a class="btn btn-outline-secondary" href="/ventas/{{ object.slug }}">Cancelar</a>    
+                {% endif %}
+            </div>
+        </form>
+    </div>
+{% endblock content %}

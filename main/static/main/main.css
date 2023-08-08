@@ -1,6 +1,6 @@
 :root {
     --footercolor: #003F72;
-    --navbarcolor: #003F72;
+    --navbarcolor: #ffffff;
     --btncolor: #003F72;
     --socialcolor: #003F72;
     --brightText: #ffffff;
@@ -25,7 +25,7 @@
   }
   
   body {
-    background: #fafafa;
+    background: #f5e5dc;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -128,10 +128,10 @@
   }
   
   .title-style {
-      font-family: fell, Georgia, Cambria, 'Times New Roman', Times, serif !important;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
   }
   .subtitle-style {
-    font-family: sohne, 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
     color: rgba(117, 117, 117, 1) !important;
   }
   

@@ -1,0 +1,188 @@
+{% extends 'main/header.html' %}
+{% block content %}
+    <div class="row display.flex justify-content-start">
+        {% if type == "trabajadores" %}
+        {% for object in objects %}
+        <div class="col-lg-4 col-md-6 col-sm-12 mobiledevice">
+            <article class="media content-section customhover" style="height: 95%;">
+                <div class="media-body">
+                    <div class="article-metadata">
+                        <div style="float: right">
+                                <a class="btn btncolor btn-sm mt-1 mb-1" href="{% url 'actualizar_trabajador' object.slug %}">Actualizar</a>
+                                <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'eliminar_trabajador' object.slug %}">Eliminar</a>                   
+                        </div>
+                    </div>
+                    <div>
+                        <a class="article-title line-clamp-2 title-style" style="font-size: 22px" href="trabajadores/{{object.slug}}">
+                            {{ object.nombre_empleado }}
+                        </a>
+                    </div>
+                    <a href="trabajadores/{{object.slug}}" style="text-decoration: none;">
+                        <p class="article-content line-clamp-5 subtitle-style">{{ object.tipo_trabajo}}</p>
+                    </a>
+                </div>
+            </article>
+        </div>
+        {% endfor %}
+        {% elif type == "contratos" %}
+        {% for object in objects %}
+        <div class="col-lg-4 col-md-6 col-sm-12 mobiledevice">
+            <article class="media content-section customhover" style="height: 95%;">
+                <div class="media-body">
+                    <div class="article-metadata">
+                        <div style="float: right">
+                                <a class="btn btncolor btn-sm mt-1 mb-1" href="{% url 'actualizar_contrato' object.slug %}">Actualizar</a>
+                                <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'eliminar_contrato' object.slug %}">Eliminar</a>                   
+                        </div>
+                    </div>
+                    <div>
+                        <a class="article-title line-clamp-2 title-style" style="font-size: 22px" href="contratos/{{object.slug}}">
+                            {{ object.folio_contrato }}
+                        </a>
+                    </div>
+                    <a href="contratos/{{object.slug}}" style="text-decoration: none;">
+                        <p class="article-content line-clamp-5 subtitle-style">{{ object }}</p>
+                    </a>
+                </div>
+            </article>
+        </div>
+        {% endfor %}
+        {% elif type == "ventas" %}
+        {% for object in objects %}
+        <div class="col-lg-4 col-md-6 col-sm-12 mobiledevice">
+            <article class="media content-section customhover" style="height: 95%;">
+                <div class="media-body">
+                    <div class="article-metadata">
+                        <div style="float: right">
+                                <a class="btn btncolor btn-sm mt-1 mb-1" href="{% url 'actualizar_venta' object.slug %}">Actualizar</a>
+                                <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'eliminar_venta' object.slug %}">Eliminar</a>                   
+                        </div>
+                    </div>
+                    <div>
+                        <a class="article-title line-clamp-2 title-style" style="font-size: 22px" href="ventas/{{object.slug}}">
+                            {{ object.folio_venta }}
+                        </a>
+                    </div>
+                    <a href="ventas/{{object.slug}}" style="text-decoration: none;">
+                        <p class="article-content line-clamp-5 subtitle-style">{{ object }}</p>
+                    </a>
+                </div>
+            </article>
+        </div>
+        {% endfor %}
+        {% elif type == "ubicaciones" %}
+        {% for object in objects %}
+        <div class="col-lg-4 col-md-6 col-sm-12 mobiledevice">
+            <article class="media content-section customhover" style="height: 95%;">
+                <div class="media-body">
+                    <div class="article-metadata">
+                        <div style="float: right">
+                                <a class="btn btncolor btn-sm mt-1 mb-1" href="{% url 'actualizar_ubicacion' object.slug %}">Actualizar</a>
+                                <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'eliminar_ubicacion' object.slug %}">Eliminar</a>                   
+                        </div>
+                    </div>
+                    <div>
+                        <a class="article-title line-clamp-2 title-style" style="font-size: 22px" href="ubicaciones/{{object.slug}}">
+                            {{ object.nombre_ubicacion }}
+                        </a>
+                    </div>
+                    <a href="ubicaciones/{{object.slug}}" style="text-decoration: none;">
+                        <p class="article-content line-clamp-5 subtitle-style">{{ object.tipo_ubicacion}}</p>
+                    </a>
+                </div>
+            </article>
+        </div>
+        {% endfor %}
+        {% elif type == "templos" %}
+        {% for object in objects %}
+        <div class="col-lg-4 col-md-6 col-sm-12 mobiledevice">
+            <article class="media content-section customhover" style="height: 95%;">
+                <div class="media-body">
+                    <div class="article-metadata">
+                        <div style="float: right">
+                                <a class="btn btncolor btn-sm mt-1 mb-1" href="{% url 'actualizar_templo' object.slug %}">Actualizar</a>
+                                <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'eliminar_templo' object.slug %}">Eliminar</a>                   
+                        </div>
+                    </div>
+                    <div>
+                        <a class="article-title line-clamp-2 title-style" style="font-size: 22px" href="templos/{{object.slug}}">
+                            {{ object.nombre_templo }}
+                        </a>
+                    </div>
+                    <a href="templos/{{object.slug}}" style="text-decoration: none;">
+                        <p class="article-content line-clamp-5 subtitle-style">{{ object.ubicacion_templo}}</p>
+                    </a>
+                </div>
+            </article>
+        </div>
+        {% endfor %}
+        {% elif type == "salones" %}
+        {% for object in objects %}
+        <div class="col-lg-4 col-md-6 col-sm-12 mobiledevice">
+            <article class="media content-section customhover" style="height: 95%;">
+                <div class="article-metadata">
+                    <div style="float: right">
+                            <a class="btn btncolor btn-sm mt-1 mb-1" href="{% url 'actualizar_salon' object.slug %}">Actualizar</a>
+                            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'eliminar_salon' object.slug %}">Eliminar</a>                   
+                    </div>
+                </div>
+                <div>
+                    <a class="article-title line-clamp-2 title-style" style="font-size: 22px" href="salones/{{object.slug}}">
+                        {{ object.nombre_salon }}
+                    </a>
+                </div>
+                <a href="salones/{{object.slug}}" style="text-decoration: none;">
+                    <p class="article-content line-clamp-5 subtitle-style">{{ object.ubicacion_salon}}</p>
+                </a>
+            </article>
+        </div>
+        {% endfor %}
+        {% elif type == "asignaciones" %}
+        {% for object in objects %}
+        <div class="col-lg-4 col-md-6 col-sm-12 mobiledevice">
+            <article class="media content-section customhover" style="height: 95%;">
+                <div class="media-body">
+                    <div class="article-metadata">
+                        <div style="float: right">
+                                <a class="btn btncolor btn-sm mt-1 mb-1" href="{% url 'actualizar_asignacion' object.slug %}">Actualizar</a>
+                                <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'eliminar_asignacion' object.slug %}">Eliminar</a>                   
+                        </div>
+                    </div>
+                    <div>
+                        <a class="article-title line-clamp-2 title-style" style="font-size: 22px" href="asignaciones/{{object.slug}}">
+                            {{ object.id_asignacion }}
+                        </a>
+                    </div>
+                    <a href="asignaciones/{{object.slug}}" style="text-decoration: none;">
+                        <p class="article-content line-clamp-5 subtitle-style">{{ object }}</p>
+                    </a>
+                </div>
+            </article>
+        </div>
+        {% endfor %}
+        {% elif type == "paquetes" %}
+        {% for object in objects %}
+        <div class="col-lg-4 col-md-6 col-sm-12 mobiledevice">
+            <article class="media content-section customhover" style="height: 95%;">
+                <div class="media-body">
+                    <div class="article-metadata">
+                        <div style="float: right">
+                                <a class="btn btncolor btn-sm mt-1 mb-1" href="{% url 'actualizar_paquete' object.slug %}">Actualizar</a>
+                                <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'eliminar_paquete' object.slug %}">Eliminar</a>                   
+                        </div>
+                    </div>
+                    <div>
+                        <a class="article-title line-clamp-2 title-style" style="font-size: 22px" href="paquetes/{{object.slug}}">
+                            {{ object.nombre_paquete }}
+                        </a>
+                    </div>
+                    <a href="paquetes/{{object.slug}}" style="text-decoration: none;">
+                        <p class="article-content line-clamp-5 subtitle-style">{{ object }}</p>
+                    </a>
+                </div>
+            </article>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+{% endblock content %}
