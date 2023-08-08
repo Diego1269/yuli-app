@@ -146,9 +146,9 @@ class Venta(models.Model):
         return txt.format(self.folio_venta, self.paquete_venta, self.usuario_venta, self.fecha_venta, self.total_venta)
     
     def save(self, *args, **kwargs):
-        txt = "{0}-{1}"
+        txt = "venta-{0}-{1}"
         if not self.slug:
-            self.slug = slugify(txt.format(self.folio_venta, self.paquete_venta))
+            self.slug = slugify(txt.format(self.usuario_venta, self.fecha_venta))
         super(Venta, self).save(*args, **kwargs)
 
 class Asignacion(models.Model):
@@ -173,5 +173,5 @@ class Asignacion(models.Model):
     def save(self, *args, **kwargs):
         txt = "{0}-{1}-{2}"
         if not self.slug:
-            self.slug = slugify(txt.format(self.id_asignacion, self.empleado_asignado, self.contrato_asignado))
+            self.slug = slugify(txt.format(self.id_asignacion, self.empleado_asignado, self.contrato_asignado.fecha_contrato))
         super(Asignacion, self).save(*args, **kwargs)
