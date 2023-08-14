@@ -27,7 +27,7 @@ SECRET_KEY = 'x8okcz8ghwqbcx_af6rk*r7szhh1$5c4c&rq8z-opeo#0r*53b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['yuli-app-production.up.railway.app']
+ALLOWED_HOSTS = ['yuli-app-production.up.railway.app','127.0.0.1']
 
 
 # Application definition
